@@ -1,0 +1,88 @@
+<!--pages/marry/marry.wxml-->
+
+<view class="content">
+  <view>
+    <image src="../../images/title.png" style="width:100%;height:220px;"></image>
+  </view>
+  <view class="ticket">
+    <view class="first">
+      <icon type="success"></icon>
+      我第一次索票
+    </view>
+    <view class="second">
+      <icon type="success"></icon>
+      我以前索过票
+    </view>
+  </view>
+  <form bindsubmit="formSubmit">
+    <view class="item">
+      <view class="name">姓名：</view>
+      <view class="val">
+        <input name="name" type="text"></input>
+      </view>
+    </view>
+    <view class="item">
+      <view class="name">手机号：</view>
+      <view class="val">
+        <input name="mobile" type="text"></input>
+      </view>
+    </view>
+    <view class="item">
+      <view class="name">爱人姓名：</view>
+      <view class="val">
+        <input name="lovename" type="text"></input>
+      </view>
+  </view>
+  <view class="item">
+    <view class="name">爱人手机：</view>
+    <view class="val">
+      <input name="lovemobile" type="text"></input>
+    </view>
+    </view>
+    <view class="item">
+      <view class="name">快递地址：</view>
+      <view class="val">
+        <input name="address" type="text" placeholder="情侣套票免费快递到家" placeholder-class="holder"></input>
+      </view>
+    </view>
+    <view class="item">
+      <view class="name">婚期：</view>
+      <view class="val">
+        <input name="date" type="text" placeholder="请输入日期 " placeholder-class="holder"></input>
+      </view>
+    </view>
+    <view class="item">
+      <view class="name">需要筹备：</view>
+      <view class="box">
+        <checkbox-group name="box">
+          <block wx:for="{{checkboxDatas}}" wx:key="">
+            <checkbox value="{{item}}">{{item}}</checkbox>
+          </block>
+        </checkbox-group>
+      </view>
+    </view>
+    <view class="item">
+      <view class="name">获知渠道：</view>
+      <view>
+        <button class="way" bindtap="selectWay">{{way}}</button>
+      </view>
+    </view>
+    <button class="btn" form-type="submit">免费索票</button>
+  </form>
+</view>
+
+<!-- 以下似乎弹框选单。 -->
+<view class="{{flag == '0' ? 'bg' : 'hideBg'}}">
+  <view class="radioBg">
+    <radio-group bindchange="radioChange">
+      <block wx:for="{{radioDatas}}" wx:key="">
+        <view class="radioItem">
+          <view class="radioName">{{item}}</view>
+          <view class="radioVal">
+            <radio value="{{item}}" checked="{{index == 0}}"></radio>
+          </view>
+        </view>
+      </block>
+    </radio-group>
+  </view>
+</view>

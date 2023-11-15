@@ -1,0 +1,46 @@
+<!--pages/cash/cash.wxml-->
+
+<dl class="menu">
+  <dt data-index="0" bindtap="tapMainMenu" class="{{currentTab == 0 ? 'select' : ' default'}}">全部</dt>
+  <dd class="{{subMenuDisplay[0]}}">
+    <ul>
+      <li class="select">全部</li>
+      <li>订喜宴</li>
+      <li>拍婚照</li>
+      <li>找婚庆</li>
+      <li>订婚戒</li>
+      <li>选婚纱</li>
+      <li>淘婚品</li>
+      <li>度蜜月</li>
+      <li>美新娘</li>
+      <li>拍写真</li>
+    </ul>
+  </dd>
+  <dt data-index="1" bindtap="tapMainMenu" class="{{currentTab == 1 ? 'select' : ' default'}}">默认</dt>
+  <dd class="{{subMenuDisplay[1]}}">
+    <ul>
+      <li class="select">默认</li>
+      <li>最新</li>
+      <li>最热</li>
+    </ul>
+  </dd>
+</dl>
+<view class="items">
+  <block wx:for="{{proData}}" wx:key="">
+    <view class="item">
+      <view>
+        <image src="{{item.img}}" style="width:93px;height:73px;"></image>
+      </view>
+      <view class="des">
+        <view class="title">
+          {{item.name}}<text class="Apply">已有{{item.people}}人申请</text>
+        </view>
+        <view class="hr"></view>
+        <view class="price">{{item.price}}</view>
+      </view>
+    </view>
+    <block wx:if="{{index != proCount - 1}}">
+      <view class="line"></view>
+    </block>
+  </block>
+</view>

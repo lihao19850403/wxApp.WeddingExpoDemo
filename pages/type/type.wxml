@@ -1,0 +1,79 @@
+<!--pages/type/type.wxml-->
+
+<view class="content">
+  <view class="line"></view>
+  <view class="item">
+    <view class="title">玩转婚博会</view>
+    <view class="hr"></view>
+    <view class="navs">
+      <block wx:for="{{iconSet1}}" wx:key="">
+        <block wx:if="{{index < 4}}">
+          <view class="nav">
+            <view>
+              <image src="{{item.img}}" style="width:38px;height:38px;"></image>
+            </view>
+            <view>{{item.name}}</view>
+          </view>
+        </block>
+      </block>
+    </view>
+    <view class="navs">
+      <block wx:for="{{iconSet1}}" wx:key="">
+        <block wx:if="{{index >= 4}}">
+          <view class="nav">
+            <view>
+              <image src="{{item.img}}" style="width:38px;height:38px;"></image>
+            </view>
+            <view>{{item.name}}</view>
+          </view>
+        </block>
+      </block>
+    </view>
+  </view>
+  <view class="line"></view>
+  <view class="item">
+    <view class="title">特色分类</view>
+    <view class="hr"></view>
+    <view class="navs">
+      <block wx:for="{{iconSet2}}" wx:key="">
+        <view class="nav">
+          <view>
+            <image src="{{item.img}}" style="width:38px;height:38px;"></image>
+          </view>
+          <view>{{item.name}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="line"></view>
+  <view class="item">
+    <view class="title">我的婚博会</view>
+    <view class="hr"></view>
+    <view class="navs">
+      <block wx:for="{{iconSet3}}" wx:key="">
+        <block wx:if="{{index < 4}}">
+          <view class="nav">
+            <view>
+              <image src="{{item.img}}" style="width:38px;height:38px;"></image>
+            </view>
+            <view>{{item.name}}</view>
+          </view>
+        </block>
+      </block>
+    </view>
+    <view class="navs">
+      <block wx:for="{{iconSet3}}" wx:key="">
+        <block wx:if="{{index >= 4}}">
+          <view class="nav">
+            <view>
+              <image src="{{item.img}}" style="width:38px;height:38px;"></image>
+            </view>
+            <view>{{item.name}}</view>
+          </view>
+        </block>
+      </block>
+      <view class="nav"></view>
+    </view>
+  </view>
+  <view class="line"></view>
+</view>
